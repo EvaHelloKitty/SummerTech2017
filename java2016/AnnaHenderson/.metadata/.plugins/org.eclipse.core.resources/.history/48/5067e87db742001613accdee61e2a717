@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class Shuffle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] deck= {1,2,3,4,5,6,7,8,9,10};
+
+		Random rand= new Random();
+		int[] otherArray = new int [10];
+		System.out.println(rand.nextInt(10));
+		for (int z=0;z<10;z++){
+			int w=rand.nextInt(10);
+			if (otherArray[z]==deck[w]){
+			}
+			else{
+				if (otherArray[z]==' '){
+					otherArray[z]=deck[w];
+				}
+			}
+		}
+		for (int z=0;z<10;z++){
+			System.out.println(otherArray[z]);
+		}
+		
+
+	}
+}
+
+

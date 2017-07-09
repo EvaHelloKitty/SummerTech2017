@@ -1,0 +1,45 @@
+Small Circle
+Radius=length(75)
+Center=  x(325)
+
+Eye 1
+Left= 280
+Width=20
+Right=300
+Distance to center: 25
+
+Eye 2
+Left: 350
+Width= 20
+Right: 370
+Distance to center:25
+
+Medium Circle (225, 190)
+Radius: 100
+Center: 325, 290
+Left:325-100= 225
+Right: 425
+Width: 200
+Bottom:190+200= 390
+
+Button 1 (315, 280)
+Radius: 10
+Left: 325-10=315
+Center of Medium Circle (x 325, y 290)
+Top: 280
+
+
+Large Circle (200, 340)
+Radius: 125
+Center: 325, 465 
+Bottom: 340+250= 590
+Left:325-125= 200
+
+Button 2
+Radius: 10
+Left: 315
+Center of Big Circle (x 325, y 465)
+Top: 465-10= 455
+
+
+

@@ -1,0 +1,32 @@
+
+public class TicTacToe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		char board[][]= new char[3][3];
+		System.out.println("Welcome to Tic Tac Toe!");
+
+		
+	}
+	public static char[][] fillBoard(char[][] board){
+		for (int x=0;x<3;x++){
+			for (int y=0;y<3;y++){
+				board[x][y]='-';
+			}
+			System.out.println();
+		}
+		return board;
+	}
+	public static char[][] printBoard(char[][]board){
+		for (int x=0;x<3;x++){
+			for (int y=0;y<3;y++){
+				System.out.print(board[x][y]);
+			}
+			System.out.println();
+		}
+		return board;
+	}
+}
+
+

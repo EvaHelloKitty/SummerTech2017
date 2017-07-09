@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class PrettyTriangle extends JFrame{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new PrettyTriangle();
+	}
+	public PrettyTriangle(){
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setBounds(300,100,600,800);
+		JPanel panel= new JPanel(){
+			public void paint (Graphics g){
+				g.setColor(Color.MAGENTA);
+				g.fillPolygon(new int[]{300,100,500}, new int[]{50,350,350}, 3);
+			}
+		};
+		add(panel);
+	}
+
+}

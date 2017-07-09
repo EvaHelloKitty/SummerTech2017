@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Object {
+
+	public static void main(String[] args){
+
+		Scanner scan=new Scanner(System.in);
+		//System.out.print(addition(3,4));
+		boolean adder= true;
+		while (adder==true){
+			System.out.println("Please input your first number.");
+			int firstnumber= scan.nextInt();
+			System.out.println("Now input your second number.");
+			int secondnumber= scan.nextInt();
+			System.out.println(addition(firstnumber,secondnumber));
+			System.out.println("Would you like to calculate more sums?");
+			String again= scan.next();
+			if (again=="Yes"){
+				adder=true;
+			}
+			if (again=="No"){
+				adder=false;
+			}
+		}
+		String array[]= new String[8];
+		array[0]="dog";
+		System.out.println("Please input an animal.");
+		String animal= scan.nextLine();
+		array[1]=animal;
+		System.out.println(array);
+
+		
+	}
+	public static int addition (int number, int number2){
+		return number + number2;
+	}
+
+}

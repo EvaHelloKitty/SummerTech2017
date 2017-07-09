@@ -1,0 +1,23 @@
+import java.awt.Color;
+
+public class CardDeck {
+	
+	Card[] deck;
+		
+	public CardDeck (){
+		deck= new Card[52];
+		for (int x=0;x<13;x++){
+			deck[x]= new Card(Color.RED,x+1,"diamond");
+			
+		}
+		for (int x=13;x<26;x++){
+			deck[x]=new Card(Color.RED,x-12,"heart");
+		}
+		for (int x=26;x<39;x++){
+			deck[x]=new Card(Color.BLACK,x-25,"spade");
+		}
+		for (int x=39;x<52;x++){
+			deck[x]=new Card(Color.BLACK,x-38,"club");
+		}
+	}
+}

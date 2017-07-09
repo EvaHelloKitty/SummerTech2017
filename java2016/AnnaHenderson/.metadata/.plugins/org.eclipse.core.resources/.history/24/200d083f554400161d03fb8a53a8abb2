@@ -1,0 +1,30 @@
+
+public class Recursion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(factorial2(5));
+		System.out.println(reverseString("cat",""));
+	}
+	public static int factorial (int x){
+		for (int y=x-1;y>0;y--){
+			x=x*y;
+		}
+		return x;
+	}
+	public static int factorial2 (int w){
+		if (w==0){
+			return 1;
+		}
+		return w*factorial2(w-1);
+	}
+	public static String reverseString (String reverse, String newString){
+		if(reverse.length()==0){
+			return "" ;
+		}
+		return reverseString(reverse.substring(0, reverse.length()-1),newString+reverse.charAt(reverse.length()-1));
+		//reverse.charAt(0)
+		//reverse.substring(2,3)
+	}
+
+}

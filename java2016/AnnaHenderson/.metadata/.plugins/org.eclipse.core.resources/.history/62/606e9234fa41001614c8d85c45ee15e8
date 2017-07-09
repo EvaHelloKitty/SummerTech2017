@@ -1,0 +1,12 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Person Sam= new Person("Sam", "brown", 6, "brown");
+		System.out.println(Sam.getName());
+		Sam.speak("stuff");
+			
+		}
+}

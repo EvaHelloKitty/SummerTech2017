@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		CardDeck deck= new CardDeck();
+		int p=0;
+		ArrayList<Card> yourHand= new ArrayList<Card>();
+		System.out.println("Your Hand");
+		System.out.println(deck.topCard(p));
+		yourHand.add(deck.topCard(p));
+		p++;
+		System.out.println(deck.topCard(p));
+		yourHand.add(deck.topCard(p));
+		p++;
+		Scanner scan= new Scanner(System.in);
+		int hits=2;
+		ArrayList<Card> dealersHand= new ArrayList<Card>();
+		System.out.println("Dealer's Hand");
+		System.out.println(deck.topCard(p));
+		dealersHand.add(deck.topCard(p));
+		p++;
+		System.out.println(deck.topCard(p));
+		dealersHand.add(deck.topCard(p));
+
+		boolean game=true;
+		while (game){
+			System.out.println("Would you like to hit or stop?");
+			String input=scan.next();
+			if(input.equals("hit")){
+				p++;
+				System.out.println(deck.topCard(p));
+				yourHand.add(deck.topCard(p));
+				hits++;
+				if (total(hits,deck,yourHand)>21){
+					System.out.println(total(hits,deck,yourHand));
+					System.out.println("You lost!");
+					game=false;
+				}
+			}
+			if (input.equals("stop")){
+				game=false;
+				System.out.println(total(hits,deck,yourHand));
+			}
+			
+		}
+	}
+	public static int total (int hits,CardDeck deck,ArrayList<Card> hand){
+		Scanner scan= new Scanner(System.in);
+		int total=0;
+		int ace=0;
+		for (int p=0;p<hand.size();p++){
+			if (hand.get(p).getNumber()>10){
+				total+=10;
+			}
+			else if (hand.get(p).getNumber()==1){
+				System.out.println("Would you like your ace to be worth 1 or 11?");
+				int aceInput= scan.nextInt();
+				if (aceInput==1){
+					total+=1;
+				}
+				if (aceInput==11){
+					total+=11;
+				}
+			}
+			else{
+				total+=hand.get(p).getNumber();
+			}
+		}
+		return total;
+	}
+	
+}

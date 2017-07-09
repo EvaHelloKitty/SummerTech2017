@@ -1,0 +1,5 @@
+cat
+'t'+'a'+'c'
+reverse= "tac"
+
+"t"+"ca"="ta"+"c"="tac"+""

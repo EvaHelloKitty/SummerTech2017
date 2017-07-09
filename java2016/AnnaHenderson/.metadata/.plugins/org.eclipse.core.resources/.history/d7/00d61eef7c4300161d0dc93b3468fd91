@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Game {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		CardDeck deck= new CardDeck();
+		int p=0;
+		System.out.println(deck.topCard(p));
+		p++;
+		System.out.println(deck.topCard(p));
+		Scanner scan= new Scanner(System.in);
+		int hits=2;
+		
+		boolean game=true;
+		while (game){
+			System.out.println("Would you like to hit or stop?");
+			String input=scan.next();
+			if(input.equals("hit")){
+				p++;
+				System.out.println(deck.topCard(p));
+				hits++;
+			}
+			if (input.equals("stop")){
+				game=false;
+				System.out.println(total(hits,deck));
+			}
+		}
+	}
+	public static int total (int hits,CardDeck deck){
+		int total=0;
+		for (int p=0;p<hits;p++){
+			if (deck.topCard(p).getNumber()>10){
+				total+=10;
+			}
+			else if (deck.topCard(p).getNumber()==1){
+				total+=11;
+			}
+			else{
+				total+=deck.topCard(p).getNumber();
+			}
+		}
+		return total;
+
+	}
+}

@@ -1,0 +1,19 @@
+
+public class Recursion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(factorial2(1));
+	}
+	public static int factorial (int x){
+		for (int y=x-1;y>0;y--){
+			x=x*y;
+		}
+		return x;
+	}
+	public static int factorial2 (int w){
+		factorial2(w);
+		return w;
+	}
+
+}

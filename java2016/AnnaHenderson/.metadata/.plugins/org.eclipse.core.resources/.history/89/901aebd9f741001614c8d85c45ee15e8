@@ -1,0 +1,15 @@
+
+public class Person {
+
+	String name;
+	String eyecolor;
+	int height;
+	String haircolor;
+	public Person (String name, String eyecolor, int height, String haircolor){
+		this.name=name;
+		this.eyecolor=eyecolor;
+		this.height=height;
+		this.haircolor=haircolor;
+	}
+	
+}

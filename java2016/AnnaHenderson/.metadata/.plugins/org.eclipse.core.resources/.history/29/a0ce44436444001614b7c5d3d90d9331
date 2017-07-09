@@ -1,0 +1,9 @@
+
+public class Square extends Rectangle{
+
+	public static void main (String[] args){
+		Square newSquare= new Square();
+		System.out.println(newSquare.getSides());
+	}
+	
+}

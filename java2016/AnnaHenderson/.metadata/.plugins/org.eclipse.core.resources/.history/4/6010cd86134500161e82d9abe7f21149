@@ -1,0 +1,36 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class PrettyTriangle extends JFrame{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new PrettyTriangle();
+	}
+	public PrettyTriangle(){
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setBounds(300,100,600,800);
+		JPanel panel= new JPanel(){
+			public void paint (Graphics g){
+				g.setColor(Color.MAGENTA);
+				g.fillPolygon(new int[]{300,100,500}, new int[]{50,350,350}, 3);
+				g.setColor(Color.WHITE);
+				recursion(g, new int[]{300,100,500}, new int[]{50,350,350});
+			}
+		};
+		add(panel);
+	}
+	public void recursion (Graphics g, int[]xCoordinates, int[]yCoordinates){
+		if((xCoordinates[0]-xCoordinates[1])<3){
+			return;
+		}
+		g.fillPolygon(new int[]{(xCoordinates[0]+xCoordinates[1])/2, (xCoordinates[1]+xCoordinates[2])/2, (xCoordinates[2]+xCoordinates[0])/2}, new int[]{(yCoordinates[0]+yCoordinates[1])/2, (yCoordinates[1]+yCoordinates[2])/2, (yCoordinates[2]+yCoordinates[0])/2}, 3);
+		g.setColor(new Color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256)));
+		recursion(g,(new int[]{(xCoordinates[0]+xCoordinates[1])/2, (xCoordinates[1]+xCoordinates[2])/2, (xCoordinates[2]+xCoordinates[0])/2}), new int[]{(yCoordinates[0]+yCoordinates[1])/2, (yCoordinates[1]+yCoordinates[2])/2, (yCoordinates[2]+yCoordinates[0])/2});
+	}
+
+}

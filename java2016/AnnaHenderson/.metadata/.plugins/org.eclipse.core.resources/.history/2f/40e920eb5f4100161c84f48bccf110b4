@@ -1,0 +1,13 @@
+
+public class Object {
+	
+	public static void main(String[] args){
+		
+		System.out.print(addition(3,4));
+		
+	}
+	public static int addition (int number, int number2){
+		return number + number2;
+	}
+
+}
